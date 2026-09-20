@@ -85,7 +85,6 @@ export default function Navbar() {
           <NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => isActive ? "text-white text-2xl font-medium tracking-wide transition-colors" : "text-slate-400 text-2xl font-medium tracking-wide hover:text-white transition-colors"}>Home</NavLink>
           <NavLink to="/services" onClick={closeMobileMenu} className={({ isActive }) => isActive ? "text-white text-2xl font-medium tracking-wide transition-colors" : "text-slate-400 text-2xl font-medium tracking-wide hover:text-white transition-colors"}>Services</NavLink>
           <NavLink to="/process" onClick={closeMobileMenu} className={({ isActive }) => isActive ? "text-white text-2xl font-medium tracking-wide transition-colors" : "text-slate-400 text-2xl font-medium tracking-wide hover:text-white transition-colors"}>Process</NavLink>
-          <NavLink to="/about" onClick={closeMobileMenu} className={({ isActive }) => isActive ? "text-white text-2xl font-medium tracking-wide transition-colors" : "text-slate-400 text-2xl font-medium tracking-wide hover:text-white transition-colors"}>About</NavLink>
           
           <Link to="/contact" onClick={closeMobileMenu} className="mt-4 flex items-center gap-3 px-8 py-3 text-lg font-medium text-white bg-blue-600/20 hover:bg-blue-600/40 rounded-full border border-blue-500/30 transition-all">
             Get in Touch
