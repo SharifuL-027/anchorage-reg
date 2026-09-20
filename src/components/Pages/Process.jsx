@@ -103,12 +103,12 @@ export default function Process() {
       <div className="relative max-w-5xl mx-auto px-6 lg:px-12 py-24 md:py-32" ref={timelineRef}>
         
         {/* Master Vertical Line (Background) */}
-        <div className="absolute left-[39px] md:left-[59px] top-32 bottom-24 w-px bg-white/5 z-0"></div>
+        <div className="absolute left-9.75 md:left-14.75 top-32 bottom-24 w-px bg-white/5 z-0"></div>
         
         {/* Animated Glow Line (Fills up on scroll) */}
         <motion.div 
           style={{ scaleY: smoothLine }}
-          className="absolute left-[39px] md:left-[59px] top-32 bottom-24 w-[2px] bg-gradient-to-b from-cyan-100 via-cyan-200 to-transparent z-10 origin-top shadow-[0_0_15px_rgba(34,211,238,0.5)]"
+          className="absolute left-9.75 md:left-14.75 top-32 bottom-24 w-0.5 bg-linear-to-b from-cyan-100 via-cyan-200 to-transparent z-10 origin-top shadow-[0_0_15px_rgba(34,211,238,0.5)]"
         ></motion.div>
 
         <div className="relative z-20 flex flex-col gap-16 md:gap-24">

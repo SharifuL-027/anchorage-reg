@@ -5,7 +5,7 @@ export default function YachtModel() {
 
   return (
     // ১. Float ইফেক্ট একদম কমিয়ে দেওয়া হয়েছে, যাতে এটি রাডারের ওপর স্থির মনে হয়
-    <Float speed={1.5} rotationIntensity={0} floatIntensity={0.1}>
+    <Float speed={1.5} rotationIntensity={0.01} floatIntensity={0.1}>
       <primitive 
         object={scene} 
         scale={0.5} // বোটের সাইজ আগের চেয়ে একটু বড় করা হয়েছে (ভিডিওর সাথে মিল রাখার জন্য)
