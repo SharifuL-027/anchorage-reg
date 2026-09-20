@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#090C10] pt-20 pb-16 md:pb-24 overflow-hidden font-sans">
+    <footer className="relative bg-[#1C2432] pt-20 pb-16 md:pb-24 overflow-hidden font-sans">
       
       {/* Background Texture/Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-900/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
@@ -37,7 +37,7 @@ export default function Footer() {
               </div>
               
               {/* Description / Disclaimer */}
-              <p className="text-slate-400 text-sm leading-relaxed tracking-wide text-justify md:text-left">
+              <p className="text-slate-400 text-[16px] leading-relaxed tracking-wide text-justify">
                 Anchorage Yacht Services Ltd is an independent vessel registration and maritime administrative services company, providing specialist support with UK ship registration and selected international registration matters. We are not part of, endorsed by, or officially affiliated with the UK Ship Register, the Maritime and Coastguard Agency (MCA), the International Maritime Organization (IMO), or any flag State administration.
 
               </p>

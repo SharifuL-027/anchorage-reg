@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function WhyWorkWithUs() {
   return (
     // pt-0 (Padding Top 0) দেওয়া হয়েছে যাতে সেকশনের উপরে কোনো গ্যাপ না থাকে
-    <section className="relative bg-[#111520] text-white pt-0 pb-24 md:pb-32 overflow-hidden min-h-[50vh] flex flex-col">
+    <section className="relative bg-[#1C2432] text-white pt-0 pb-24 md:pb-32 overflow-hidden min-h-[50vh] flex flex-col">
       
       {/* ========================================== */}
       {/* 🏷️ TAG / BADGE */}

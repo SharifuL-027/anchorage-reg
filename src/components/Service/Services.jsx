@@ -87,7 +87,7 @@ const AnimatedTitle = ({ text }) => {
 
 export default function ServicesOverview() {
   return (
-    <section className="relative bg-[#090C10] min-h-screen pb-32 font-sans">
+    <section className="relative bg-[#1C2432] min-h-screen pb-32 font-sans">
       
       {/* ========================================== */}
       {/* 🚢 BOLD HERO IMAGE PART (আগের মতোই রাখা হয়েছে) */}
@@ -99,7 +99,7 @@ export default function ServicesOverview() {
             alt="Maritime Fleet" 
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#090C10] via-[#090C10]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-[#1C2432] via-[#090C10]/70 to-transparent"></div>
         </div>
 
         <div className="relative z-10 w-full max-w-360 mx-auto px-6 lg:px-12 pb-16 md:pb-24 mt-auto">

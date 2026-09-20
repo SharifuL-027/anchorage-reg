@@ -56,7 +56,7 @@ export default function Navbar() {
         {/* ৩. ডান অংশ: কল টু অ্যাকশন বাটন এবং মোবাইল মেন্যু আইকন */}
         <div className="flex items-center gap-4 z-50">
           {/* ডেস্কটপ বাটন */}
-          <Link to="/contact" className="hidden lg:flex items-center gap-3 px-5 py-2.5 text-[14px] font-medium text-white bg-white/5 hover:bg-white/10 rounded border border-white/10 transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+          <Link className="hidden lg:flex items-center gap-3 px-5 py-2.5 text-[14px] font-medium text-white bg-white/5 hover:bg-white/10 rounded border border-white/10 transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
             Get in Touch
             <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

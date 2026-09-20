@@ -12,7 +12,7 @@ const requirements = [
 
 export default function EligibilityCheck() {
   return (
-    <section className="relative bg-[#111520] text-white py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-[#1C2432] text-white py-24 md:py-32 overflow-hidden">
       
       {/* Background Glow Illusions (হালকা গ্লো রাখা হয়েছে যাতে টেক্সটগুলো সুন্দর ফুটে ওঠে) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-900/20 rounded-full blur-[120px] pointer-events-none z-0"></div>

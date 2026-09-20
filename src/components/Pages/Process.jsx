@@ -43,7 +43,7 @@ export default function Process() {
   const smoothLine = useSpring(timelineScroll, { damping: 20, stiffness: 100 });
 
   return (
-    <section className="relative bg-[#090C10] min-h-screen font-sans">
+    <section className="relative bg-[#1C2432] min-h-screen font-sans">
       
       {/* ========================================== */}
       {/* 🎬 HERO SECTION (Services Overview Style) */}
@@ -57,7 +57,7 @@ export default function Process() {
             alt="Maritime Process" 
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-[#090C10]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1C2432] via-[#090C10]/70 to-transparent"></div>
         </div>
 
         {/* Hero Content aligned to bottom */}
