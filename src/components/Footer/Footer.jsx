@@ -86,7 +86,7 @@ export default function Footer() {
               </span>
               
               {/* Eligibility Check Link as a highlighted action */}
-              <a href="#" className="mt-2 text-cyan-400 text-sm font-medium hover:text-cyan-300 transition-colors duration-300 flex items-center gap-2 group">
+              <a href="#" className="mt-2 text-white text-sm plus-sans-medium hover:text-cyan-100 transition-colors duration-300 flex items-center gap-2 group">
                 Eligibility check <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>

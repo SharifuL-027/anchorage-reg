@@ -3,48 +3,48 @@ import { motion } from 'framer-motion';
 const servicesData = [
   { 
     tag: "UK", 
-    title: "UK yacht & pleasure vessel registration", 
-    desc: "Part 1 and Small Ships Register guidance, including eligibility, documentation, and survey requirements." 
+    title: "UK Part 3 Small Ships Registration", 
+    desc: "Support with UK Part 3 Small Ships Register (SSR) applications, including eligibility checks, application preparation, ownership and vessel details, submission and registry follow-up." 
   },
   { 
     tag: "UK", 
-    title: "Commercial vessel registration", 
-    desc: "Support for commercial registration where tonnage, use, or ownership structure adds complexity." 
+    title: "UK Part 1 Pleasure & Commercial Vessel Registration", 
+    desc: "End-to-end support with UK Part 1 registration for eligible pleasure and commercial vessels, from vessel-name availability and ownership documentation through to tonnage measurement coordination, application preparation, submission and registry follow-up." 
   },
   { 
-    tag: "Flag", 
-    title: "Flag selection & advisory", 
-    desc: "Comparing jurisdictions against the vessel's trading pattern, ownership, and long-term plans." 
-  },
-  { 
-    tag: "Flag", 
-    title: "International registration assistance", 
-    desc: "Coordinating documentation and correspondence with overseas registries and their agents." 
+    tag: "UK", 
+    title: "UK Provisional Registration", 
+    desc: "Support with provisional UK registration where temporary registration is required before full registration can be completed, including application preparation, supporting documentation and progression towards full registration." 
   },
   { 
     tag: "Change", 
-    title: "Change of ownership", 
-    desc: "Transfer of registration following sale, inheritance, or restructuring of ownership." 
+    title: "Change of Ownership & Vessel Details", 
+    desc: "Support with changes to registered ownership and vessel particulars, including vessel name, port and other registered details, together with the preparation and review of supporting registry documentation." 
   },
   { 
-    tag: "Change", 
-    title: "Transfer & deletion of registry", 
-    desc: "Closing out a registration cleanly when a vessel is re-flagged, sold abroad, or scrapped." 
+    tag: "Finance", 
+    title: "UK Part 1 Vessel Mortgage Registration", 
+    desc: "Support with registering, transferring and discharging mortgages against UK Part 1 registered vessels, including preparation and review of the required documentation and coordination throughout the registry process." 
+  },
+  { 
+    tag: "Survey", 
+    title: "Tonnage Survey Coordination", 
+    desc: "Where UK Part 1 registration requires tonnage measurement, we can help identify and coordinate with an appropriate authorised surveyor or organisation and manage the resulting documentation as part of the registration process." 
+  },
+  { 
+    tag: "Closure", 
+    title: "Deregistration & Registry Closure", 
+    desc: "Assistance with closing a UK registration when a vessel is sold, re-flagged or otherwise removed from the register, including the required documentation and appropriate registry records following closure." 
   },
   { 
     tag: "Docs", 
-    title: "Documentation review", 
-    desc: "Checking applications and supporting paperwork before submission, to reduce back-and-forth with the registry." 
+    title: "Registration Application & Document Review", 
+    desc: "Preparing your own registration application? We can review it before submission. Our pre-submission review checks the application and supporting documentation for missing information, inconsistencies and potential registry queries, helping you submit a more complete registration package." 
   },
   { 
-    tag: "Docs", 
-    title: "Regulatory & administrative support", 
-    desc: "General guidance on the administrative side of vessel ownership and compliance." 
-  },
-  { 
-    tag: "Setup", 
-    title: "UK company formation support", 
-    desc: "Guidance on setting up a UK entity to hold vessel ownership, where that suits the client's structure better than personal registration." 
+    tag: "Flag", 
+    title: "Flag Selection & International Registration Assistance", 
+    desc: "Considering registration outside the UK? We can help identify suitable registration options based on ownership eligibility, vessel use, operating area and administrative requirements. For selected jurisdictions, we can also assist with application documentation and coordinate with the relevant overseas registry, local representative or registration agent." 
   }
 ];
 
@@ -185,14 +185,14 @@ export default function ServicesOverview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col md:flex-row items-center justify-between py-12 md:py-16 border-b border-white/10 bg-gradient-to-r from-cyan-900/10 to-transparent px-6 md:px-12 -mx-6 md:-mx-12 rounded-b-2xl"
+            className="flex flex-col md:flex-row items-center justify-between py-12 md:py-16 border-b border-white/10 bg-linear-to-r from-cyan-900/10 to-transparent px-6 md:px-12 -mx-6 md:-mx-12 rounded-b-2xl"
           >
             <div className="w-full md:w-2/3 mb-8 md:mb-0">
               <h3 className="text-2xl md:text-3xl lg:text-4xl plus-sans-bold text-gray-50 mb-3 tracking-tight">
-                Not sure which register fits?
+                Not sure which registration is right for your vessel?
               </h3>
               <p className="text-slate-100 text-sm md:text-base max-w-2xl leading-relaxed">
-                Answer a few questions about the vessel and ownership, and we'll come back with an initial assessment — <span className="text-slate-200 font-medium">no obligation.</span>
+                Tell us a little about your vessel, ownership and intended use. We'll review the details and provide an initial assessment of the registration options and requirements — <span className="text-slate-200 font-medium">no obligation.</span>
               </p>
             </div>
             
