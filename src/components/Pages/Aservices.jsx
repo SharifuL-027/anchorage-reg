@@ -73,7 +73,8 @@ const servicesData = [
 const RealFadedImage = ({ isLeft, imgSrc, windowTitle }) => {
   return (
     <div 
-      className="relative mt-6 md:mt-10 w-full max-w-[700px] h-[220px] sm:h-[300px] md:h-[450px] border border-white/10 rounded-2xl bg-[#090C10] shadow-2xl overflow-hidden group flex flex-col"
+      // মোবাইলে হাইট অপ্টিমাইজ করা হয়েছে (h-[200px] sm:h-[260px])
+      className="relative mt-6 md:mt-10 w-full max-w-175 h-50 sm:h-65 md:h-112.5 border border-white/10 rounded-xl md:rounded-2xl bg-[#1C2432] shadow-2xl overflow-hidden group flex flex-col"
       style={{
         WebkitMaskImage: isLeft 
           ? 'linear-gradient(to right, transparent 0%, black 15%, black 100%)' 
@@ -85,11 +86,11 @@ const RealFadedImage = ({ isLeft, imgSrc, windowTitle }) => {
     >
       
       {/* 🖥️ APP WINDOW HEADER */}
-      <div className="flex items-center px-4 md:px-5 py-2.5 md:py-3 bg-[#131823] border-b border-white/5 relative z-10 shrink-0">
-        <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="flex items-center px-3 md:px-5 py-2 md:py-3 bg-[#131823] border-b border-white/5 relative z-10 shrink-0">
+        <svg className="w-3 h-3 md:w-4 md:h-4 text-slate-400 mr-2 md:mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <span className="text-xs md:text-[13px] font-medium text-slate-300 tracking-wide truncate">
+        <span className="text-[10px] md:text-[13px] font-medium text-slate-300 tracking-wide truncate">
           {windowTitle || "Service Dashboard"}
         </span>
       </div>
@@ -120,51 +121,57 @@ export default function Services() {
   const smoothProgress = useSpring(scrollYProgress, { damping: 20, stiffness: 100 });
 
   return (
-    <section ref={containerRef} className="relative bg-[#111520] text-white py-0 pt-12 md:pt-12 md:py-0 overflow-hidden">
+    <section ref={containerRef} className="relative bg-[#1C2432] text-white py-0 pt-16 md:pt-12 md:py-0 overflow-hidden">
       
       {/* THE MASTER DRAWING LINE */}
+      {/* মোবাইলে left-6 (24px) এ রাখা হয়েছে */}
       <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-white/5 md:-translate-x-1/2 z-0"></div>
       
       <motion.div 
         style={{ scaleY: smoothProgress }} 
-        className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gray-600 to-gray-400 md:-translate-x-1/2 shadow-[0_0_15px_rgba(156,163,175,0.5)] z-10 origin-top"
+        className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-gray-600 to-gray-400 md:-translate-x-1/2 shadow-[0_0_15px_rgba(156,163,175,0.5)] z-10 origin-top"
       ></motion.div>
 
 
       {/* ZIG-ZAG TIMELINE WITH BIG IMAGES */}
-      <div className="relative max-w-[90rem] mx-auto w-full z-20 pb-20">
+      {/* মোবাইলের জন্য নিচের প্যাডিং (pb-12) কমানো হয়েছে */}
+      <div className="relative max-w-[90rem] mx-auto w-full z-20 pb-12 md:pb-20">
         {servicesData.map((item, index) => {
           const isLeft = index % 2 === 0;
 
           return (
-            <div key={index} className="relative w-full flex mb-32 md:mb-48 group">
+            // মোবাইলে আইটেমগুলোর মাঝের গ্যাপ (mb-20) কমানো হয়েছে, ডেক্সটপে (mb-48) ঠিক আছে
+            <div key={index} className="relative w-full flex mb-20 md:mb-48 group">
               
-              {/* Center Dot */}
-              <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-[#111520] border-2 border-gray-400 rounded-full z-20 shadow-[0_0_10px_rgba(156,163,175,0.5)] mt-3 transition-transform duration-300 group-hover:scale-150"></div>
+              {/* Center Dot - লাইনটির ঠিক মাঝ বরাবর (left-[25px]) বসানো হয়েছে */}
+              <div className="absolute left-6.25 md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 md:w-4 md:h-4 bg-[#111520] border-2 border-gray-400 rounded-full z-20 shadow-[0_0_10px_rgba(156,163,175,0.5)] mt-4 md:mt-3 transition-transform duration-300 group-hover:scale-150"></div>
 
-              {/* ================= MOBILE LAYOUT ================= */}
-              <div className="md:hidden w-full pl-14 pr-5 flex flex-col">
+              {/* ================= MOBILE LAYOUT (100% Responsive) ================= */}
+              {/* pl-14 দিয়ে লাইন থেকে কন্টেন্ট দূরে রাখা হয়েছে এবং pr-6 দিয়ে ডানপাশে স্পেস রাখা হয়েছে */}
+              <div className="md:hidden w-full pl-14 pr-6 flex flex-col">
                 <motion.div
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-5%" }}
+                  viewport={{ once: true, margin: "-10%" }}
                 >
-                  <div className="inline-flex items-center px-3 py-1.5 mb-3 rounded bg-white/5 border border-white/10 w-max">
-                    <span className="text-[10px] uppercase tracking-widest text-slate-300 flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 bg-gray-400 rounded-full inline-block"></span> {item.tag}
+                  <div className="inline-flex items-center px-2.5 py-1 mb-3 rounded bg-white/5 border border-white/10 w-max">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-300 flex items-center gap-1.5">
+                      <span className="w-2 h-2 bg-gray-400 rounded-full inline-block"></span> {item.tag}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-3 leading-tight">{item.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+                  {/* মোবাইলে টাইটেল সাইজ text-xl থেকে text-2xl এর মাঝে রাখা হয়েছে */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-slate-400 text-justify leading-relaxed mb-1">{item.desc}</p>
                 </motion.div>
                 
                 <motion.div
-                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-5%" }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-10%" }}
                 >
+                  {/* মোবাইলে সব ইমেজেই isLeft={true} রাখা হয়েছে যাতে লাইনের পাশ থেকে ফেড-আউট হয় */}
                   <RealFadedImage isLeft={true} imgSrc={item.img} windowTitle={item.title} />
                 </motion.div>
               </div>

@@ -74,11 +74,11 @@ export default function Hero() {
 
   return (
     // এখানে কোনোভাবেই overflow-hidden দেওয়া যাবে না।
-    <section ref={containerRef} className="relative h-[400vh] bg-[#111520]">
+    <section ref={containerRef} className="relative h-[400vh] bg-[#1C2432] w-full max-w-[100vw] overflow-x-clip">
       
       {/* স্টিকি কন্টেইনার */}
-      <div className="sticky top-0 h-screen w-full flex justify-center items-center">
-
+      <div className="sticky top-0 h-screen w-full flex justify-center items-center overflow-hidden">
+      
         {/* 🗺️ BACKGROUND MAP */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <motion.div style={{ y: mapY }} className="relative w-full h-[200vh]">
