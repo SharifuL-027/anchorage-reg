@@ -23,7 +23,6 @@ export default function Navbar() {
   return (
     <>
       <header 
-        // Grid এর বদলে Flexbox (flex justify-between) ব্যবহার করা হয়েছে
         className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-in-out flex items-center justify-between py-0 px-6 lg:px-16 ${
           isScrolled 
             ? 'py-4 bg-[#0B0F19]/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
