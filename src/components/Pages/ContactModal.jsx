@@ -48,7 +48,7 @@ export default function ContactModal({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 font-sans">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 font-sans">
           
           {/* Background Overlay */}
           <motion.div 
@@ -56,7 +56,7 @@ export default function ContactModal({ isOpen, onClose }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+            className="absolute inset-0 bg-[#090C10]/80 backdrop-blur-sm cursor-pointer"
           ></motion.div>
 
           {/* Modal Container */}
@@ -65,19 +65,19 @@ export default function ContactModal({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-full max-w-2xl bg-[#131823] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-2xl bg-[#131823] border border-white/10 rounded-2xl shadow-[0_0_40px_rgba(34,211,238,0.1)] overflow-hidden flex flex-col max-h-[90vh]"
           >
             {/* Header */}
             <div className="flex justify-between items-center p-6 md:px-8 border-b border-white/5 shrink-0">
               <h2 className="text-2xl font-bold text-white tracking-tight relative">
                 Contact Form
-                {/* Cyan Accent Line matching reference image style */}
+                {/* Cyan Accent Line */}
                 <div className="absolute -bottom-6 left-0 w-1/2 h-[2px] bg-cyan-500"></div>
               </h2>
               
               <button 
                 onClick={onClose}
-                className="text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full"
+                className="text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full cursor-pointer"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -92,7 +92,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 {/* Full Name */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Full Name <span className="text-red-500">*</span>
+                    Full Name <span className="text-cyan-400">*</span>
                   </label>
                   <input 
                     type="text" 
@@ -107,7 +107,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 {/* Email Address */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Email Address <span className="text-red-500">*</span>
+                    Email Address <span className="text-cyan-400">*</span>
                   </label>
                   <input 
                     type="email" 
@@ -122,7 +122,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 {/* Subject Dropdown */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Subject <span className="text-red-500">*</span>
+                    Subject <span className="text-cyan-400">*</span>
                   </label>
                   <div className="relative">
                     <select 
@@ -157,7 +157,7 @@ export default function ContactModal({ isOpen, onClose }) {
                       className="overflow-hidden"
                     >
                       <label className="block text-sm font-semibold text-slate-300 mb-2">
-                        Specify Required Service <span className="text-red-500">*</span>
+                        Specify Required Service <span className="text-cyan-400">*</span>
                       </label>
                       <input 
                         type="text" 
@@ -175,7 +175,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 {/* Message Textarea */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Message <span className="text-red-500">*</span>
+                    Message <span className="text-cyan-400">*</span>
                   </label>
                   <textarea 
                     name="message"
@@ -185,24 +185,16 @@ export default function ContactModal({ isOpen, onClose }) {
                     rows={4}
                     className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors resize-y"
                   ></textarea>
-                  <p className="text-xs text-slate-400 mt-2">10 or more words required</p>
                 </div>
 
-                {/* Footer / Captcha & Submit */}
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mt-4 pt-6 border-t border-white/5">
-                  
-                  {/* Dummy Verification Box matching reference image */}
-                  <div className="flex items-center gap-3 bg-[#090C10] border border-white/10 p-3 pr-8 rounded-md">
-                    <input type="checkbox" required className="w-5 h-5 accent-cyan-500 cursor-pointer rounded" />
-                    <span className="text-red-500 font-bold tracking-wide">Verified</span>
-                    <span className="text-[10px] text-slate-500 absolute ml-23.75 mt-6">Protected by ALTCHA</span>
-                  </div>
-
+                {/* Footer / Submit Button (CAPTCHA Removed) */}
+                <div className="flex justify-end mt-2 pt-6 border-t border-white/5">
                   <button 
                     type="submit"
-                    className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg shadow-red-500/20"
+                    className="w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-3 font-semibold text-[#090C10] bg-cyan-400 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300 cursor-pointer group"
                   >
                     Submit
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
                   </button>
                 </div>
 
