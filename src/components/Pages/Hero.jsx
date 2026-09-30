@@ -46,9 +46,6 @@ export default function Hero() {
   const mapY = useTransform(smoothProgress, [0, 1], ["15vh", "-120vh"]);
 
   // ==========================================
-  // 🎬 ম্যাজিক ২: ROLLING SUBTITLES (লাইন রিপ্লেসমেন্ট)
-  // ==========================================
-// ==========================================
   // 🎬 ম্যাজিক ২: LEFT-TO-RIGHT TYPING / REVEAL
   // ==========================================
   // ব্লক ১: Registration expertise...
@@ -62,9 +59,14 @@ export default function Hero() {
   const block2Y = useTransform(smoothProgress, [0.68, 0.73, 0.76, 0.79], ["20px", "0px", "0px", "-30px"]);
 
   // ব্লক ৩: IMO Heading + Description
-  const block3Opacity = useTransform(smoothProgress, [0.78, 0.79, 1], [0, 1, 1]);
+  const block3Opacity = useTransform(smoothProgress, [0.78, 0.79, 0.86, 0.89], [0, 1, 1, 0]);
   const block3Clip = useTransform(smoothProgress, [0.79, 0.84], ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]);
-  const block3Y = useTransform(smoothProgress, [0.79, 0.84, 1], ["20px", "0px", "0px"]);
+  const block3Y = useTransform(smoothProgress, [0.79, 0.84, 0.86, 0.89], ["20px", "0px", "0px", "-30px"]);
+
+  // ব্লক ৪: Now we put that experience on your side. (নতুন যোগ করা হয়েছে)
+  const block4Opacity = useTransform(smoothProgress, [0.88, 0.89, 1], [0, 1, 1]);
+  const block4Clip = useTransform(smoothProgress, [0.89, 0.94], ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]);
+  const block4Y = useTransform(smoothProgress, [0.89, 0.94, 1], ["20px", "0px", "0px"]);
 
   // ==========================================
   // 🚀 Camera Pan (পুরো সিস্টেম উপরে তোলার জন্য)
@@ -73,7 +75,7 @@ export default function Hero() {
 
 
   return (
-    // এখানে কোনোভাবেই overflow-hidden দেওয়া যাবে না।
+    // এখানে কোনোভাবেই overflow-hidden দেওয়া যাবে না।
     <section ref={containerRef} className="relative h-[400vh] bg-[#1C2432] w-full max-w-[100vw] overflow-x-clip">
       
       {/* স্টিকি কন্টেইনার */}
@@ -103,12 +105,12 @@ export default function Hero() {
         {/* PHASE 1: মেইন টেক্সট ও ৪টি কার্ড */}
         <motion.div style={{ opacity: phase1Opacity, y: phase1Y }} className="absolute inset-0 z-30 pointer-events-none">
           <div className="absolute top-[12vh] w-full text-center flex flex-col items-center px-4">
-            {/* মোবাইলের জন্য টেক্সট সাইজ রেসপন্সিভ করা হয়েছে */}
+            {/* মোবাইলের জন্য টেক্সট সাইজ রেসপন্সিভ করা হয়েছে */}
             <h1 className="text-2xl md:text-3xl lg:text-3xl font-semibold tracking-tight text-white leading-[1.1] max-w-4xl mx-auto drop-shadow-lg">
              Yacht & Vessel Registration, <br/>backed by a team with first-hand UK registry experience.
             </h1>
             <p className="text-sm md:text-[16px] text-slate-100 max-w-2xl mx-auto mt-6 leading-relaxed">
-              Specialist support with UK Part 1 and Part 3 registration, pleasure and commercial vessels, provisional registration, changes of ownership and vessel details, deregistration, mortgages and registry documentation. </p>
+             Specialist support with UK Part 1 and Part 3 registration, pleasure and commercial vessels, provisional registration, changes of ownership and vessel details, deregistration, mortgages and registry documentation. </p>
           </div>
 
           <div className="absolute inset-0 max-w-360 mx-auto hidden lg:block">
@@ -166,7 +168,7 @@ export default function Hero() {
           ></motion.div>
 
           <motion.div style={{ opacity: radarOpacity, scale: radarScale }} className="absolute top-[20vh] left-1/2 -translate-x-1/2 flex justify-center items-center pointer-events-none z-10">
-            {/* ম্যাজিক: মোবাইলে রাডারটি যেন স্ক্রিন না ভাঙে তাই scale-50 দেওয়া হয়েছে, ডেস্কটপে 100% থাকবে */}
+            {/* ম্যাজিক: মোবাইলে রাডারটি যেন স্ক্রিন না ভাঙে তাই scale-50 দেওয়া হয়েছে, ডেস্কটপে 100% থাকবে */}
             <div className="relative flex justify-center items-center scale-50 md:scale-100">
               <div className="absolute w-64 h-64 rounded-full border border-cyan-500/30"></div>
               <div className="absolute w-125 h-125 rounded-full border border-cyan-500/20"></div>
@@ -238,6 +240,16 @@ export default function Hero() {
               </p>
             </motion.div>
 
+            {/* ----------------- ব্লক ৪ ----------------- */}
+            <motion.div 
+              style={{ opacity: block4Opacity, y: block4Y, clipPath: block4Clip }}
+              className="absolute w-full flex flex-col items-center justify-center px-4"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl plus-sans-bold tracking-tight text-gray-100 drop-shadow-2xl text-center mb-3">
+                Now we put that experience on your side.
+              </h2>
+            </motion.div>
+ 
           </div>
         </motion.div>
 
