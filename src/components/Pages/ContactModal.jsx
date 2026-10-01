@@ -16,7 +16,9 @@ const servicesList = [
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     fullName: '',
+    companyName: '', // নতুন ফিল্ড
     email: '',
+    phoneNumber: '', // নতুন ফিল্ড
     subject: '',
     otherSubject: '',
     message: ''
@@ -89,37 +91,70 @@ export default function ContactModal({ isOpen, onClose }) {
             <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar">
               <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 
-                {/* Full Name */}
-                <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Full Name <span className="text-cyan-400">*</span>
-                  </label>
-                  <input 
-                    type="text" 
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
-                  />
+                {/* 1. Full Name & Company Name (২ কলামে দেখানো হয়েছে ডেস্কটপের জন্য) */}
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex-1">
+                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                      Full Name <span className="text-cyan-400">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                      Company Name <span className="text-slate-500 font-normal ml-1">(Optional)</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="companyName"
+                      value={formData.companyName}
+                      onChange={handleChange}
+                      placeholder="e.g. Anchorage Yacht Ltd."
+                      className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors placeholder:text-slate-600"
+                    />
+                  </div>
                 </div>
 
-                {/* Email Address */}
-                <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Email Address <span className="text-cyan-400">*</span>
-                  </label>
-                  <input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
-                  />
+                {/* 2. Email Address & Phone Number (২ কলামে দেখানো হয়েছে ডেস্কটপের জন্য) */}
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex-1">
+                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                      Email Address <span className="text-cyan-400">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                      Phone Number <span className="text-cyan-400">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      required
+                      placeholder="+44 7XXX XXXXXX" // UK Phone format placeholder
+                      className="w-full bg-[#090C10] border border-white/10 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors placeholder:text-slate-600 tracking-wide"
+                    />
+                  </div>
                 </div>
 
-                {/* Subject Dropdown */}
+                {/* 3. Subject Dropdown */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
                     Subject <span className="text-cyan-400">*</span>
@@ -147,7 +182,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   </div>
                 </div>
 
-                {/* Conditional Input for "Other Services" */}
+                {/* 4. Conditional Input for "Other Services" */}
                 <AnimatePresence>
                   {formData.subject === 'Other Services' && (
                     <motion.div
@@ -172,7 +207,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   )}
                 </AnimatePresence>
 
-                {/* Message Textarea */}
+                {/* 5. Message Textarea */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-300 mb-2">
                     Message <span className="text-cyan-400">*</span>
@@ -187,7 +222,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   ></textarea>
                 </div>
 
-                {/* Footer / Submit Button (CAPTCHA Removed) */}
+                {/* 6. Footer / Submit Button */}
                 <div className="flex justify-end mt-2 pt-6 border-t border-white/5">
                   <button 
                     type="submit"
