@@ -50,7 +50,7 @@ export default function ContactModal({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 font-sans">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 font-sans">
           
           {/* Background Overlay */}
           <motion.div 
@@ -74,7 +74,7 @@ export default function ContactModal({ isOpen, onClose }) {
               <h2 className="text-2xl font-bold text-white tracking-tight relative">
                 Contact Form
                 {/* Cyan Accent Line */}
-                <div className="absolute -bottom-6 left-0 w-1/2 h-[2px] bg-cyan-500"></div>
+                <div className="absolute -bottom-6 left-0 w-1/2 h-0.5 bg-cyan-500"></div>
               </h2>
               
               <button 
@@ -229,7 +229,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     className="w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-3 font-semibold text-[#090C10] bg-cyan-400 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300 cursor-pointer group"
                   >
                     Submit
-                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
                   </button>
                 </div>
 
